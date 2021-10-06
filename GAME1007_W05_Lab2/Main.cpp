@@ -7,6 +7,30 @@ void Init()
 	cout << "Initializing game..." << endl;
 }
 
+// HandleEvents function. Handles events.
+void HandleEvents()
+{
+	cout << "Handling events..." << endl;
+}
+
+// Update function. Process game objects.
+void Update()
+{
+	cout << "Processing..." << endl;
+}
+
+// Render function. Updates the window.
+void Render()
+{
+	cout << "Rendering..." << endl;
+}
+
+// Clean function. De-initialize SDL.
+void Clean()
+{
+	cout << "Cleaning up..." << endl;
+}
+
 // Run function. Contains the game loop.
 int Run()
 {
@@ -16,9 +40,15 @@ int Run()
 	Init();
 	while (isRunning) // This is our game loop.
 	{
-		
+		HandleEvents(); // Input.
+		Update();		// Processing.
+		Render();		// Output.
+		cout << "\nDo you want to quit? [y/n]: ";
+		cin >> input;
+		if (input == 'y')
+			isRunning = false;
 	}
-
+	Clean();
 	return 0;
 }
 
